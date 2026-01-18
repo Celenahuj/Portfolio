@@ -1,0 +1,144 @@
+<section id="projets" class="py-6 pb-20 max-w-7xl mx-auto">
+    <div class="flex items-center py-20 gap-30">
+        <h1 class="text-4xl sm:text-6xl uppercase accent-color font-light">
+            MES PROJETS
+        </h1>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
+
+        <div class="relative w-full xs:w-[calc(50%-8px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] aspect-[9/16] rounded-xl overflow-hidden shadow-lg bg-gray-100 border border-gray-200 group cursor-pointer projet-card"
+            data-project-id="olive-oil">
+            <img src="/oliveoil.png" alt="Vignette 1 - Olive Oil"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+
+            <!-- Overlay avec texte au hover -->
+            <div
+                class="absolute inset-0 bg-transparent group-hover:bg-black/80 transition-all duration-300 flex flex-col items-center justify-center p-4 pointer-events-none">
+                <h3
+                    class="text-white text-xl font-bold mb-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    Olive Oil
+                </h3>
+                <p
+                    class="text-white text-sm text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75">
+                    Refonte de l’identité visuelle et création du prototype du site vitrine.
+                </p>
+            </div>
+        </div>
+
+        <div class="relative w-full xs:w-[calc(50%-8px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] aspect-[9/16] rounded-xl overflow-hidden shadow-lg bg-gray-100 border border-gray-200 group cursor-pointer projet-card"
+            data-project-id="projet-2">
+            <img src="/status.png" alt="Vignette 2 - Projet 2"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+
+            <!-- Overlay avec texte au hover -->
+            <div
+                class="absolute inset-0 bg-transparent group-hover:bg-black/80 transition-all duration-300 flex flex-col items-center justify-center p-4 pointer-events-none">
+                <h3
+                    class="text-white text-xl font-bold mb-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    Motion Design
+                </h3>
+                <p
+                    class="text-white text-sm text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75">
+                    Conception d’un teaser avec réalisation de storyboards, animatiques, maquettes graphiques
+                </p>
+                
+            </div>
+        </div>
+
+        <div class="relative w-full xs:w-[calc(50%-8px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] aspect-[9/16] rounded-xl overflow-hidden shadow-lg bg-gray-100 border border-gray-200 group cursor-pointer projet-card"
+            data-project-id="projet-3">
+            <img src="/mycrew.png" alt="Vignette 3 - Projet 3"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+
+            <!-- Overlay avec texte au hover -->
+            <div
+                class="absolute inset-0 bg-transparent group-hover:bg-black/80 transition-all duration-300 flex flex-col items-center justify-center p-4 pointer-events-none">
+                <h3
+                    class="text-white text-xl font-bold mb-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    MyCrew
+                </h3>
+                <p
+                    class="text-white text-sm text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75">
+                    UX/UI d’une application de sport communautaire, analyse utilisateurs et Design System.
+                </p>
+            </div>
+        </div>
+
+        <div class="relative w-full xs:w-[calc(50%-8px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] aspect-[9/16] rounded-xl overflow-hidden shadow-lg bg-gray-100 border border-gray-200 group cursor-pointer projet-card"
+            data-project-id="projet-4">
+            <img src="/map.png" alt="Vignette 4 - Projet 4"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+
+            <!-- Overlay avec texte au hover -->
+            <div
+                class="absolute inset-0 bg-transparent group-hover:bg-black/80 transition-all duration-300 flex flex-col items-center justify-center p-4 pointer-events-none">
+                <h3
+                    class="text-white text-xl font-bold mb-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    MMI Tracker
+                </h3>
+                <p
+                    class="text-white text-sm text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75">
+                    Application web interactive pour visualiser la progression des compétences MMI.
+                </p>
+                <a onclick="event.stopPropagation()" href="https://celenahuj.github.io/SAE303/" target="_blank" class="text-white text-sm underline mt-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-150 pointer-events-auto">
+                    Voir le site
+                </a>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+</section>
+
+<!-- Panneau latéral pour les détails du projet -->
+<div id="projet-panel-overlay"
+    class="fixed inset-0 bg-black/50 z-40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+<div id="projet-panel"
+    class="fixed top-0 right-0 h-full w-full bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+    <div class="relative h-full">
+        <!-- Bouton de fermeture fixe -->
+        <button id="close-panel"
+            class="fixed top-6 right-6 w-12 h-12 flex items-center justify-center bg-white hover:bg-gray-100 rounded-full text-gray-700 hover:text-gray-900 transition-colors shadow-lg z-[60] border-2 border-gray-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <!-- Contenu du panneau -->
+        <div class="p-8 pt-20">
+            <!-- Titre du projet -->
+            <h2 id="panel-titre" class=" flex justify-center text-4xl font-bold accent-color mb-6 font-cantata-one">
+            </h2>
+
+            <!-- Description -->
+            <div class="mb-8 flex justify-center">
+                <h3 class="text-xl font-semibold mb-3 font-cantata-one"></h3>
+                <p id="panel-description" class="text-lg leading-relaxed"></p>
+            </div>
+
+            <!-- Galerie d'images (nombre variable) -->
+            <div id="panel-gallery" class="mb-8 space-y-6">
+                <!-- Les images seront insérées ici dynamiquement -->
+            </div>
+
+            <!-- Sections personnalisées (nombre variable) -->
+            <div id="panel-sections" class="space-y-8 ">
+                <!-- Les sections seront insérées ici dynamiquement -->
+            </div>
+
+            <!-- Détails techniques -->
+            <div id="panel-details-container" class="border-t border-gray-200 pt-6 mt-8">
+                <h3 class="text-xl font-semibold accent-color mb-4 font-cantata-one">Détails techniques</h3>
+                <div id="panel-details" class="space-y-2 ">
+                    <!-- Les détails seront insérés ici dynamiquement -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

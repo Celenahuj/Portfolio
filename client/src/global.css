@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Heebo:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Cantata+One&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root {
+    --font-cormorant: 'Cormorant', serif;
+    --font-heebo: 'Heebo', sans-serif;
+    --font-cosmic-neue: 'Comic Neue', cursive;
+    --font-caprasimo: 'Caprasimo', cursive;
+    --font-cantarell: 'Cantarell', sans-serif;
+    --font-cantata-one: 'Cantata One', serif;
+}
+
+body {
+    font-family: var(--font-cantarell);
+    background-color: #F2F0E9;
+    padding-inline: 6px;
+}
+/* Accent color utility class */
+.accent-color {
+    color: #D73BAE;
+}
+
+.border-accent {
+    border-color: #D73BAE;
+}
+
+.bg-accent {
+    background-color: #D73BAE;
+}
+
+.text-accent {
+    color: #D73BAE;
+}
+
+.hover\:bg-accent:hover {
+    background-color: #D73BAE;
+}
+
+/* Hover utility for text accent (used as class "hover:text-accent") */
+.hover\:text-accent:hover {
+    color: #D73BAE;
+}
+
+.font-cantata-one {
+    font-family: var(--font-cantata-one);
+}

@@ -1,0 +1,18 @@
+<header class="relative w-full py-4 px-8">
+
+  <div class="w-full py-6 flex justify-end">
+    <slot name="categories-nav"></slot>
+  </div>
+
+  <button id="burger-menu-btn"
+    class="lg:hidden absolute top-8 right-8 z-30 flex flex-col gap-1.5 w-8 h-8 justify-center items-center font-caprasimo">
+    <span class="block w-6 h-0.5 bg-black transition-all duration-300"></span>
+    <span class="block w-6 h-0.5 bg-black transition-all duration-300"></span>
+    <span class="block w-6 h-0.5 bg-black transition-all duration-300"></span>
+  </button>
+
+  <div id="mobile-menu" class="hidden lg:hidden absolute top-20 right-8 bg-white p-6 rounded-lg shadow-lg z-30">
+    <slot name="categories-nav-mobile"></slot>
+  </div>
+
+</header>
