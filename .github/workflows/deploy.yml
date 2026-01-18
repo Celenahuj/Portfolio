@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd SAE301/client
-          npm ci
+          npm install
       
       - name: Build
         run: |
