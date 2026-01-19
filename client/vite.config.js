@@ -6,6 +6,7 @@ export default defineConfig({
     target: "esnext", //browsers can handle the latest ES features
   },
   plugins: [tailwindcss()],
+  base: process.env.NODE_ENV === 'production' ? '/Portfolio/' : '/',
   server: {
     proxy: {
       '/api': {
