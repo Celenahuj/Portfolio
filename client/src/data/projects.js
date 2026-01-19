@@ -6,7 +6,7 @@ export const projectsData = [
     description: 'Refonte de l\'identité visuelle et création du prototype du site vitrine.',
     thumbnail: '/oliveoil.png',
     images: [
-      { url: '/pj-oliveoil.png', caption: 'Interface principale' },
+      { url: 'pj-oliveoil.png', caption: 'Interface principale' },
     ],
     detailsTechniques: [
       { label: 'Outils', value: 'Figma' },
@@ -19,9 +19,9 @@ export const projectsData = [
     description: 'Conception d’un teaser avec réalisation de storyboards, animatiques, maquettes graphiques',
     thumbnail: '/status.png',
     images: [
-      { url: '/animatique.mp4', caption: 'Animatique' },
-      { url: '/maquette.pdf', caption: 'Maquette' },
-      { url: '/motiondesign.mp4', caption: 'Motion Design' }
+      { url: 'animatique.mp4', caption: 'Animatique' },
+      { url: 'maquette.pdf', caption: 'Maquette' },
+      { url: 'motiondesign.mp4', caption: 'Motion Design' }
       
       
     ],
@@ -35,7 +35,7 @@ export const projectsData = [
     description: 'Conception UX/UI d’une application de sport communautaire, de l’analyse des parcours à la création d’un Design System modulaire sous Auto-layout.',
     thumbnail: '/mycrew.png',
     images: [
-      { url: '/pj-mycrew.png', caption: 'Version desktop' },
+      { url: 'pj-mycrew.png', caption: 'Version desktop' },
     ],
     detailsTechniques: [
       { label: 'Outils', value: 'Figma' },
@@ -47,8 +47,8 @@ export const projectsData = [
     description: 'Conception d’une application web interactive de visualisation de données pour suivre et illustrer la progression des compétences MMI de manière ludique et animée.',
     thumbnail: '/mycrew.png',
     images: [
-      { url: '/monde.svg', caption: 'Illustrations compétences' },
-      { url: '/svgsae.svg', caption: 'map' },
+      { url: 'monde.svg', caption: 'Illustrations compétences' },
+      { url: 'svgsae.svg', caption: 'map' },
     ],
     detailsTechniques: [
       { label: 'Outils', value: 'Illustrator, HTML, CSS, JavaScript, GSAP' },
