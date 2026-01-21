@@ -44,8 +44,10 @@ let ProjetView = {
         // Vérifier si c'est une iframe
         if (img.isIframe) {
           const iframeWrapper = document.createElement('div');
-          iframeWrapper.className = 'relative w-full' ;
+          iframeWrapper.className = 'relative w-full';
           iframeWrapper.style.paddingBottom = '56.25%'; // Ratio 16:9
+          iframeWrapper.style.height = '0';
+          iframeWrapper.style.overflow = 'hidden';
           
           const iframeContainer = document.createElement('div');
           iframeContainer.className = 'absolute top-0 left-0 w-full h-full';
@@ -55,9 +57,12 @@ let ProjetView = {
           setTimeout(() => {
             const iframe = iframeContainer.querySelector('iframe');
             if (iframe) {
-              iframe.className = 'w-full h-full';
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+              iframe.className = 'absolute top-0 left-0 w-full h-full';
               iframe.style.width = '100%';
               iframe.style.height = '100%';
+              iframe.style.border = 'none';
             }
           }, 0);
           
@@ -65,8 +70,10 @@ let ProjetView = {
           mediaDiv.appendChild(iframeWrapper);
           
           if (img.caption) {
-            const captionHTML = '<p class="text-sm text-gray-600 text-center mt-2 italic">' + img.caption + '</p>';
-            mediaDiv.innerHTML = mediaDiv.innerHTML + captionHTML;
+            const caption = document.createElement('p');
+            caption.className = 'text-sm text-gray-600 text-center mt-2 italic';
+            caption.textContent = img.caption;
+            mediaDiv.appendChild(caption);
           }
           
           panelGallery.appendChild(mediaDiv);
