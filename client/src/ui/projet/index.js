@@ -41,6 +41,38 @@ let ProjetView = {
         const mediaDiv = document.createElement('div');
         mediaDiv.className = 'rounded-xl overflow-hidden shadow-lg mb-6';
         
+        // Vérifier si c'est une iframe
+        if (img.isIframe) {
+          const iframeWrapper = document.createElement('div');
+          iframeWrapper.className = 'relative w-full' ;
+          iframeWrapper.style.paddingBottom = '56.25%'; // Ratio 16:9
+          
+          const iframeContainer = document.createElement('div');
+          iframeContainer.className = 'absolute top-0 left-0 w-full h-full';
+          iframeContainer.innerHTML = img.url;
+          
+          // Ajuster l'iframe pour être responsive
+          setTimeout(() => {
+            const iframe = iframeContainer.querySelector('iframe');
+            if (iframe) {
+              iframe.className = 'w-full h-full';
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+            }
+          }, 0);
+          
+          iframeWrapper.appendChild(iframeContainer);
+          mediaDiv.appendChild(iframeWrapper);
+          
+          if (img.caption) {
+            const captionHTML = '<p class="text-sm text-gray-600 text-center mt-2 italic">' + img.caption + '</p>';
+            mediaDiv.innerHTML = mediaDiv.innerHTML + captionHTML;
+          }
+          
+          panelGallery.appendChild(mediaDiv);
+          continue;
+        }
+        
         // Vérifier si c'est un lien externe
         if (img.isLink) {
           const linkHTML = '<a href="' + img.url + '" target="_blank" rel="noopener noreferrer" class="block bg-gradient-to-r bg-accent hover:from-purple-600 hover:to-pink-600 text-white font-semibold py-4 px-6 rounded-lg text-center transition-all duration-300 transform hover:scale-105">' +

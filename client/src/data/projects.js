@@ -21,7 +21,7 @@ export const projectsData = [
     images: [
       { url: 'animatique.mp4', caption: 'Animatique' },
       { url: 'maquette.pdf', caption: 'Maquette' },
-      { url: 'https://drive.google.com/file/d/1RFccTbxkpExUYRqql_t9SqagLMGEF0Ye/preview', caption: 'Motion Design', isLink: true },
+      { url: '<iframe width="560" height="315" src="https://www.youtube.com/embed/T59FNIojP9E?si=rUM8Ac6J3IXxguBf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>', caption: 'Motion Design', isIframe: true },
     ],
     detailsTechniques: [
       { label: 'Outils', value: 'After Effects, Figma' },
