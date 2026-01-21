@@ -29,6 +29,7 @@ let ProjetView = {
     panelDescription.textContent = project.description;
 
     // Vider la galerie avant d'ajouter les nouvelles images/vidéos
+        // Vider la galerie avant d'ajouter les nouvelles images/vidéos
     panelGallery.innerHTML = '';
     
     // Ajouter les images/vidéos
@@ -39,6 +40,19 @@ let ProjetView = {
         // Créer un div pour l'image ou la vidéo
         const mediaDiv = document.createElement('div');
         mediaDiv.className = 'rounded-xl overflow-hidden shadow-lg mb-6';
+        
+        // Vérifier si c'est un lien externe
+        if (img.isLink) {
+          const linkHTML = '<a href="' + img.url + '" target="_blank" rel="noopener noreferrer" class="block bg-gradient-to-r bg-accent hover:from-purple-600 hover:to-pink-600 text-white font-semibold py-4 px-6 rounded-lg text-center transition-all duration-300 transform hover:scale-105">' +
+                          '<span class="flex items-center justify-center gap-2">' +
+                          '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>' +
+                          img.caption +
+                          '</span>' +
+                          '</a>';
+          mediaDiv.innerHTML = linkHTML;
+          panelGallery.appendChild(mediaDiv);
+          continue;
+        }
         
         // Vérifier si c'est une vidéo
         const url = img.url.toLowerCase();
@@ -71,7 +85,6 @@ let ProjetView = {
         panelGallery.appendChild(mediaDiv);
       }
     }
-
     // Vider les sections avant d'ajouter les nouvelles
     panelSections.innerHTML = '';
     
