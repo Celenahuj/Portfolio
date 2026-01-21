@@ -93,20 +93,16 @@ let ProjetView = {
         const isPDF = url.includes('.pdf');
         
         if (isPDF) {
-          // Ajouter un PDF avec embed et lien de téléchargement
-          const pdfContainer = document.createElement('div');
-          pdfContainer.className = 'w-full';
+          // Afficher le PDF avec un iframe
+          const pdfHTML = '<iframe src="' + img.url + '" type="application/pdf" class="w-full rounded-lg" style="height: 600px; border: none;"></iframe>' +
+                         '<div class="mt-4 text-center">' +
+                         '<a href="' + img.url + '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg">' +
+                         '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>' +
+                         'Télécharger le PDF' +
+                         '</a>' +
+                         '</div>';
           
-          const embedHTML = '<embed src="' + img.url + '" type="application/pdf" class="w-full" style="height: 600px; border-radius: 0.5rem;">';
-          const linkHTML = '<div class="mt-2 text-center">' +
-                          '<a href="' + img.url + '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-accent text-white font-semibold py-2 px-4 rounded-lg hover:bg-accent/90 transition-colors">' +
-                          '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>' +
-                          'Ouvrir le PDF' +
-                          '</a>' +
-                          '</div>';
-          
-          pdfContainer.innerHTML = embedHTML + linkHTML;
-          mediaDiv.appendChild(pdfContainer);
+          mediaDiv.innerHTML = pdfHTML;
           
           if (img.caption) {
             const caption = document.createElement('p');
