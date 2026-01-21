@@ -1,4 +1,4 @@
-import { htmlToFragment, fixImagePaths } from "../../lib/utils.js";
+import { htmlToFragment } from "../../lib/utils.js";
 import { CarouselView } from "../../ui/carousel/index.js";
 import { ProjetView } from "../../ui/projet/index.js";
 import { ProfilView } from "../../ui/profil/index.js";
@@ -10,7 +10,6 @@ export function HomePage(){
     
     // Créer le fragment de base
     const fragment = htmlToFragment(template);
-    fixImagePaths(fragment);
     
     // Chercher un emplacement pour le bandeau
     const carouselContainer = fragment.querySelector('#carousel-container');

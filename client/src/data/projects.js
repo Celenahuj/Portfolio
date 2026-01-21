@@ -1,14 +1,12 @@
-import { getAssetPath } from '../lib/utils.js';
-
 // Données des projets avec contenu variable
 export const projectsData = [
   {
     id: 'olive-oil',
     titre: 'Olive Oil',
     description: 'Refonte de l\'identité visuelle et création du prototype du site vitrine.',
-    thumbnail: getAssetPath('oliveoil.png'),
+    thumbnail: '/oliveoil.png',
     images: [
-      { url: getAssetPath('pj-oliveoil.png'), caption: 'Interface principale' },
+      { url: '/pj-oliveoil.png', caption: 'Interface principale' },
     ],
     detailsTechniques: [
       { label: 'Outils', value: 'Figma' },
@@ -19,7 +17,7 @@ export const projectsData = [
     id: 'projet-2',
     titre: 'Motion Design',
     description: 'Conception d’un teaser avec réalisation de storyboards, animatiques, maquettes graphiques',
-    thumbnail: getAssetPath('status.png'),
+    thumbnail: '/status.png',
     images: [
       { url: '<iframe width="560" height="315" src="https://www.youtube.com/embed/69esvs_54AA?si=IiL7L4WfJrteWxoG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>', caption: 'Animatique', isIframe: true },
       { url: '<iframe width="560" height="315" src="https://www.youtube.com/embed/T59FNIojP9E?si=rUM8Ac6J3IXxguBf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>', caption: 'Motion Design', isIframe: true },
@@ -32,10 +30,10 @@ export const projectsData = [
     id: 'projet-3',
     titre: 'MyCrew — App de mise en relation sportive',
     description: 'Conception UX/UI d’une application de sport communautaire, de l’analyse des parcours à la création d’un Design System modulaire sous Auto-layout.',
-    thumbnail: getAssetPath('mycrew.png'),
+    thumbnail: '/mycrew.png',
     images: [
-      { url: getAssetPath('mockup-tel.png'), caption: 'Version mobile' },
-      { url: getAssetPath('pj-mycrew.png'), caption: 'Prototype' },
+      { url: '/mockup-tel.png', caption: 'Version mobile' },
+      { url: '/pj-mycrew.png', caption: 'Prototype' },
     ],
     detailsTechniques: [
       { label: 'Outils', value: 'Figma' },
@@ -45,10 +43,10 @@ export const projectsData = [
     id: 'projet-4',
     titre: 'MMI Tracker',
     description: 'Conception d’une application web interactive de visualisation de données pour suivre et illustrer la progression des compétences MMI de manière ludique et animée.',
-    thumbnail: getAssetPath('mycrew.png'),
+    thumbnail: '/mycrew.png',
     images: [
-      { url: getAssetPath('monde.svg'), caption: 'Illustrations compétences' },
-      { url: getAssetPath('svgsae.svg'), caption: 'map' },
+      { url: '/monde.svg', caption: 'Illustrations compétences' },
+      { url: '/svgsae.svg', caption: 'map' },
       { url: 'https://celenahuj.github.io/SAE303/', caption: 'Voir le site', isLink: true },
     ],
     detailsTechniques: [
@@ -59,10 +57,10 @@ export const projectsData = [
     id: 'projet-5',
     titre: 'Site Streaming',
     description: 'Conception d’une application web de streaming permettant de trier et filtrer des films, d’ajouter des favoris et de gérer des profils utilisateurs.',
-    thumbnail: getAssetPath('mycrew.png'),
+    thumbnail: '/mycrew.png',
     images: [
-      { url: getAssetPath('accueil-site.png'), caption: 'Page d\'accueil' },
-      { url: getAssetPath('detail-site.png'), caption: 'Page détail' },
+      { url: '/accueil-site.png', caption: 'Page d\'accueil' },
+      { url: '/detail-site.png', caption: 'Page détail' },
     ],
     detailsTechniques: [
       { label: 'Outils', value: 'Javascript, HTML, CSS, PHP, MySQL' },

@@ -3,6 +3,7 @@ import { Router } from "./lib/router.js";
 import { HomePage } from "./pages/home/page.js";
 import { RootLayout } from "./layouts/root/layout.js";
 import { The404Page } from "./pages/404/page.js";
+import { initScrollAnimations } from "./lib/animations.js";
 
 const router = new Router('app', { loginPath: '/login' });
 
@@ -21,4 +22,9 @@ router.addRoute("/home", HomePage);
 router.addRoute("*", The404Page);
 
 router.start();
+
+// Initialiser les animations après le chargement du DOM
+setTimeout(() => {
+  initScrollAnimations();
+}, 100);
 
