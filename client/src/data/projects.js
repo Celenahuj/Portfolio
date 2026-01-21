@@ -19,7 +19,7 @@ export const projectsData = [
     description: 'Conception d’un teaser avec réalisation de storyboards, animatiques, maquettes graphiques',
     thumbnail: '/status.png',
     images: [
-      { url: 'animatique.mp4', caption: 'Animatique' },
+      { url: '<iframe width="560" height="315" src="https://www.youtube.com/embed/69esvs_54AA?si=IiL7L4WfJrteWxoG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>', caption: 'Animatique', isIframe: true },
       { url: 'maquette.pdf', caption: 'Maquette' },
       { url: '<iframe width="560" height="315" src="https://www.youtube.com/embed/T59FNIojP9E?si=rUM8Ac6J3IXxguBf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>', caption: 'Motion Design', isIframe: true },
     ],
