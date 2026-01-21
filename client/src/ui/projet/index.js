@@ -10,9 +10,93 @@ let ProjetView = {
     // Attendre que le DOM soit monté pour attacher les événements
     setTimeout(() => {
       this.attachEventListeners();
+      this.initCarousel();
     }, 0);
     
     return fragment;
+  },
+
+  initCarousel: function() {
+    const track = document.getElementById('carousel-track');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    
+    if (!track || !prevBtn || !nextBtn) return;
+    
+    // Dupliquer les cartes pour l'effet de boucle infinie
+    const originalCards = Array.from(track.querySelectorAll('.projet-card'));
+    originalCards.forEach(card => {
+      const clone = card.cloneNode(true);
+      track.appendChild(clone);
+    });
+    
+    let currentIndex = 0;
+    const cards = track.querySelectorAll('.projet-card');
+    const totalOriginalCards = originalCards.length;
+    
+    // Fonction pour calculer combien de cartes sont visibles
+    const getVisibleCards = () => {
+      const width = window.innerWidth;
+      if (width >= 1024) return 4; // lg
+      if (width >= 768) return 3;  // md
+      if (width >= 480) return 2;  // xs
+      return 1;
+    };
+    
+    // Fonction pour mettre à jour le carrousel
+    const updateCarousel = (smooth = true) => {
+      const cardWidth = cards[0].offsetWidth;
+      const gap = 16; // gap-4 = 16px
+      const offset = currentIndex * (cardWidth + gap);
+      
+      if (smooth) {
+        track.style.transition = 'transform 0.5s ease-in-out';
+      } else {
+        track.style.transition = 'none';
+      }
+      
+      track.style.transform = `translateX(-${offset}px)`;
+    };
+    
+    // Événements des boutons
+    prevBtn.addEventListener('click', () => {
+      currentIndex--;
+      updateCarousel(true);
+      
+      // Si on est avant le début, repositionner à la fin des cartes originales
+      if (currentIndex < 0) {
+        setTimeout(() => {
+          currentIndex = totalOriginalCards - 1;
+          updateCarousel(false);
+        }, 500);
+      }
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      currentIndex++;
+      updateCarousel(true);
+      
+      // Si on dépasse les cartes originales, repositionner au début
+      if (currentIndex >= totalOriginalCards) {
+        setTimeout(() => {
+          currentIndex = 0;
+          updateCarousel(false);
+        }, 500);
+      }
+    });
+    
+    // Réinitialiser lors du redimensionnement
+    window.addEventListener('resize', () => {
+      updateCarousel(false);
+    });
+    
+    // Réattacher les événements de clic pour les cartes clonées
+    setTimeout(() => {
+      this.attachEventListeners();
+    }, 100);
+    
+    // Initialiser
+    updateCarousel(false);
   },
 
   fillPanelContent: function(project) {
@@ -125,7 +209,8 @@ let ProjetView = {
           }
         } else {
           // Ajouter une image
-          const imgHTML = '<img src="' + img.url + '" alt="' + project.titre + '" class="w-full h-auto object-cover">';
+          const maxHeight = img.maxHeight || '500px';
+          const imgHTML = '<img src="' + img.url + '" alt="' + project.titre + '" class="w-full h-auto object-contain" style="max-height: ' + maxHeight + ';">';
           mediaDiv.innerHTML = imgHTML;
           
           if (img.caption) {
