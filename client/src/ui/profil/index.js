@@ -1,10 +1,12 @@
-import { htmlToFragment } from "../../lib/utils.js";
+import { htmlToFragment, fixImagePaths } from "../../lib/utils.js";
 import template from "./template.html?raw";
 
 let ProfilView = {
 
   dom: function () {
-    return htmlToFragment(template);
+    const fragment = htmlToFragment(template);
+    fixImagePaths(fragment);
+    return fragment;
   }
 };
 

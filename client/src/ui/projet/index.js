@@ -1,4 +1,4 @@
-import { htmlToFragment } from "../../lib/utils.js";
+import { htmlToFragment, getAssetPath, fixImagePaths } from "../../lib/utils.js";
 import template from "./template.html?raw";
 import { projectsData } from "../../data/projects.js";
 
@@ -6,6 +6,9 @@ let ProjetView = {
 
   dom: function () {
     const fragment = htmlToFragment(template);
+    
+    // Corriger les chemins d'images avec le bon base path
+    fixImagePaths(fragment);
     
     // Attendre que le DOM soit monté pour attacher les événements
     setTimeout(() => {
